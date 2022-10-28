@@ -3,3 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+ul{
+    list-style: none;
+    /* align-self: flex-start; */
+}
+.fa-circle{
+    font-size: 10px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
