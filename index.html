@@ -16,7 +16,17 @@
 </head>
 <body>
     <div id="app">
-        
+        <div class="wrapper d-flex flex-column justify-content-center align-items-center my-5">
+            <h1>To do list</h1>
+            <input type="text">
+            <button class="btn btn-outline-success mt-3">+</button>
+            <ul class="mt-4">
+                <li v-for="(task, index) in tasks" .key="index">
+                    <span class="fs-4 me-2">{{tasks[index].text}}</span>
+                    <button class="btn btn-danger">x</button>
+                </li>
+            </ul>
+        </div> 
     </div>
     <script src="./JS/script.js"></script>
 </body>
