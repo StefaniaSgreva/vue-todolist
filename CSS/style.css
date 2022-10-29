@@ -12,3 +12,6 @@ ul{
     vertical-align: middle;
     margin-right: 10px;
 }
+.done{
+    text-decoration: line-through;
+}

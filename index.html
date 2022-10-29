@@ -26,7 +26,7 @@
             <!-- <div v-if="hasError">error</div> -->
             <ul class="mt-4">
                 <li v-for="(task, index) in tasks" :key="index">
-                    <span class="fs-4 me-2"><i class="far fa-circle"></i>{{tasks[index].text}}</span>
+                    <span class="fs-4 me-2" v-bind:class="className"><i class="far fa-circle"></i>{{tasks[index].text}}</span>
                     <button @click="removeTask(index)"><i class="far fa-trash-alt"></i></button>
                 </li>
             </ul>
@@ -36,9 +36,9 @@
                 <button @click="clearAll">Clear all</button>
             </div>   
             
-            <!-- <div class="pendingTasks mt-3">
+            <div class="pendingTasks mt-3">
                 <span>Pending Tasks: {{incomplete}}</span>
-            </div> -->
+            </div>
            
         </div> 
     </div>

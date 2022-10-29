@@ -17,12 +17,7 @@ const app = createApp({
                     text: 'to do 3',
                     done: false,
                 }
-            ],
-            // computed:{
-            //     incomplete(){
-            //         return this.tasks.filter(this.inProgress).length;
-            //     }
-            // }
+            ]
         }
     },
     methods:{
@@ -51,6 +46,11 @@ const app = createApp({
         clearAll(){
             this.tasks = [];
         },
+    },
+    computed:{
+        incomplete(){
+            return this.tasks.filter(this.inProgress).length;
+        }
     },
     mounted(){
         console.log('in mounted');
