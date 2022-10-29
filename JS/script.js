@@ -3,11 +3,7 @@ const {createApp} = Vue;
 const app = createApp({
     data(){
         return {
-            newTask: {
-                text:'',
-                done: false,
-            },
-            hasError: false,
+            newTask: '',
             tasks:[
                 {
                     text: 'to do 1',
@@ -22,30 +18,28 @@ const app = createApp({
                     done: false,
                 }
             ],
-            computed: {
-                incomplete(){
-                    return this.tasks.filter(this.inProgress).length;
-                }
-            }
+            // computed:{
+            //     incomplete(){
+            //         return this.tasks.filter(this.inProgress).length;
+            //     }
+            // }
         }
     },
     methods:{
         addTask(){
-            if(this.newTask.text.length >= 3){
+            if(this.newTask){
 
-                this.tasks.push(this.newTask);
-                this.hasError = false;
-
-            }else{
-
-                this.hasError = true; 
+                this.tasks.push({
+                    text: this.newTask,
+                    done: false
+                } );
             }
-            // this.newTask = '';
+            this.newTask = '';
         },
         removeTask(i){
             this.tasks.splice(i,1);
         },
-        inProgress(){
+        inProgress(task){
             return !this.isCompleted(task);
         },
         isCompleted(task){
@@ -56,12 +50,10 @@ const app = createApp({
         },
         clearAll(){
             this.tasks = [];
-        }
+        },
     },
     mounted(){
         console.log('in mounted');
     }
-
-
 });
 app.mount('#app');
