@@ -636,7 +636,9 @@ ul{
     width: 450px;
     height: 200px;
     margin: 0 auto;
-    background-color: var(--galaxy);
+    /* background-color: var(--galaxy); */
+    background-image: url(../img/rocket.PNG);
+    box-shadow: 0px 5px 17px 5px rgba(204,251,255,0.55);
 }
 .titol{
     font-size: 38px;
