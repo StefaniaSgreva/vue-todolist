@@ -6,15 +6,23 @@ const app = createApp({
             newTask: '',
             tasks:[
                 {
-                    text: 'to do 1',
-                    done: false,
-                },
-                {
-                    text: 'to do 2',
+                    text: 'Breakfast on Pluto',
                     done: true,
                 },
                 {
-                    text: 'to do 3',
+                    text: 'Catching some stars (Galaxy b-34)',
+                    done: false,
+                },
+                {
+                    text: 'Unicorn race on Saturn',
+                    done: true,
+                },
+                {
+                    text: 'Relaxing time on asteroid B-612',
+                    done: false,
+                },
+                {
+                    text: 'Dancing night on Uranus',
                     done: false,
                 }
             ]
@@ -46,6 +54,9 @@ const app = createApp({
         clearAll(){
             this.tasks = [];
         },
+        tooglePurchased(task){
+            task.done = !task.done;
+        }
     },
     computed:{
         incomplete(){
@@ -54,6 +65,6 @@ const app = createApp({
     },
     mounted(){
         console.log('in mounted');
-    }
+    },
 });
 app.mount('#app');
